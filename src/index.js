@@ -30,7 +30,7 @@ app.post("/repositories", (request, response) => {
 
 app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
-  const updatedRepository = request.body;
+  const {likes, ...updatedRepository} = request.body;
 
   repositoryIndex = repositories.findindex(repository => repository.id === id);
 
